@@ -1,4 +1,4 @@
-# Image Filter App using JavaScript
+# Image Editor using CSS Filters and Javascript
 
 A vanilla javascript app to add CSS filters on image.
 
