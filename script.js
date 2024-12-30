@@ -29,7 +29,7 @@ const ImageEditor = (function () {
 
   //* event handlers
 
-  function onSliderChange(e) {
+  function handleSettings(e) {
     const { id, value } = e.target;
     const { unit } = filters[id];
 
@@ -43,7 +43,7 @@ const ImageEditor = (function () {
     updateImagePreview();
   }
 
-  async function onImageChange(e) {
+  async function handleUpload(e) {
     selectedFile = e.target.files[0];
 
     if (selectedFile) {
@@ -59,7 +59,7 @@ const ImageEditor = (function () {
     }
   }
 
-  function onRemoveBtnClick() {
+  function handleRemove() {
     // remove image from the preview
     const image = imagePreview.querySelector("img");
     image && image.remove();
@@ -71,7 +71,7 @@ const ImageEditor = (function () {
     resetFilters();
   }
 
-  function onActionBtnClick(e) {
+  function handleAction(e) {
     const btn = e.target;
     if (btn.hasAttribute("data-save")) {
       downloadImage();
@@ -188,10 +188,10 @@ const ImageEditor = (function () {
   //* setup
 
   function setupEventListeners() {
-    settings.addEventListener("input", onSliderChange);
-    actions.addEventListener("click", onActionBtnClick);
-    imageInput.addEventListener("change", onImageChange);
-    removeBtn.addEventListener("click", onRemoveBtnClick);
+    settings.addEventListener("input", handleSettings);
+    actions.addEventListener("click", handleAction);
+    imageInput.addEventListener("change", handleUpload);
+    removeBtn.addEventListener("click", handleRemove);
   }
 
   function initialize() {
@@ -202,6 +202,4 @@ const ImageEditor = (function () {
   return { initialize };
 })();
 
-document.addEventListener("DOMContentLoaded", function () {
-  ImageEditor.initialize();
-});
+ImageEditor.initialize();

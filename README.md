@@ -24,3 +24,13 @@ A vanilla javascript app to add CSS filters on image.
 - [x] opacity
 - [x] saturate
 - [x] sepia
+
+### Screenshots
+
+![Image Editor](https://raw.githubusercontent.com/refinedguides/image-editor/main/screenshot.png)
+
+### Support Me
+
+If you'd like to support me, consider buying me a coffee. Thanks!
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/refinedguides)
